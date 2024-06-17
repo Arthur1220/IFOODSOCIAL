@@ -134,7 +134,7 @@ export default {
 
 .search-bar {
   padding: 15px;
-  background-color: #ffffff;
+  background-color: #ececec;
   display: flex;
   justify-content: center;
 }
