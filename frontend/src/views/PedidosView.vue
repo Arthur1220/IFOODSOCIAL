@@ -121,7 +121,7 @@ export default {
       this.$router.push({ name: routeName, params: { id: cod_pedido } });
     },
     toggleOverlay(isActive) {
-      this.isOverlayActive = isActive; // Atualiza o estado do overlay acinzentado
+      this.isOverlayActive = isActive;
     }
   }
 }
