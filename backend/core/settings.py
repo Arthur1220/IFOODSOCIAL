@@ -89,7 +89,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'IFOODSOCIAL',
         'USER': 'root',
-        'PASSWORD': '415273869',
+        'PASSWORD': ' ',
         'HOST': 'localhost',  # Ou o endereço do seu servidor MySQL
         'PORT': '3306',
         'OPTIONS': {
