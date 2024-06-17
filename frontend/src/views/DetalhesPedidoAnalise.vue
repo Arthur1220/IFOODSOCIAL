@@ -54,13 +54,13 @@ export default {
     statusClass() {
       switch (this.pedido.tip_status) {
         case 'A':
-          return 'Em analise';
+          return 'Análise';
         case 'P':
-          return 'Em producao';
+          return 'Producao';
         case 'E':
-          return 'Agurdando entrega';
+          return 'Aguardando';
         case 'F':
-          return 'Pedido finalizado';
+          return 'Finalizado';
         default:
           return '';
       }
@@ -157,21 +157,21 @@ export default {
   font-weight: bold;
 }
 
-.status-em-analise {
+.Análise {
   background-color: yellow;
   color: black;
 }
 
-.status-em-producao {
+.Producao {
   background-color: brown;
   color: white;
 }
 
-.status-aguardando-entrega {
-  background-color: blue;
+.Aguardando {
+  background-color: rgb(40, 170, 164);
 }
 
-.status-finalizado {
+.Finalizado {
   background-color: green;
 }
 
