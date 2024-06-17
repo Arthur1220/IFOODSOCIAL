@@ -10,7 +10,7 @@
           <section class="detalhes-pagamento">
             <h2>Detalhes do pagamento</h2>
             <p class="status-pagamento">
-              <span :class="['status', statusClass]">{{ pedido.tip_status }}</span>
+              <span :class="['status', statusClass]">{{ statusClass }}</span>
             </p>
             <p><strong>Forma de pagamento:</strong> {{ pedido.cod_forma_pagto }}</p>
             <p><strong>Subtotal:</strong> R$ {{ pedido.vlr_pedido }}</p>
@@ -62,17 +62,17 @@
       },
       statusClass() {
         switch (this.pedido.tip_status) {
-          case 'A':
-            return 'status-em-analise';
-          case 'P':
-            return 'status-em-producao';
-          case 'E':
-            return 'status-aguardando-entrega';
-          case 'F':
-            return 'status-finalizado';
-          default:
-            return '';
-        }
+        case 'A':
+          return 'Em analise';
+        case 'P':
+          return 'Em producao';
+        case 'E':
+          return 'Agurdando entrega';
+        case 'F':
+          return 'Pedido finalizado';
+        default:
+          return '';
+      }
       }
     },
     created() {

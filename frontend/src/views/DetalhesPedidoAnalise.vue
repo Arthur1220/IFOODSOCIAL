@@ -62,13 +62,13 @@ export default {
     statusClass() {
       switch (this.pedido.tip_status) {
         case 'A':
-          return 'status-em-analise';
+          return 'Em analise';
         case 'P':
-          return 'status-em-producao';
+          return 'Em producao';
         case 'E':
-          return 'status-aguardando-entrega';
+          return 'Agurdando entrega';
         case 'F':
-          return 'status-finalizado';
+          return 'Pedido finalizado';
         default:
           return '';
       }
