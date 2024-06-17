@@ -55,6 +55,7 @@ export default {
   flex-grow: 1;
   text-align: center;
   margin: 0;
+  margin-right: 75px;
 }
 
 .header h2 {
