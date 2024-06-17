@@ -164,15 +164,20 @@ class PedidoViewSet(ModelViewSet):
             itens = ItemPedido.objects.filter(cod_pedido=id)
             produtos = []
             try:
+                print(itens)
                 for i in itens:
+                    print(1)
                     produtos.append({
-                        'nome': Produto.objects.get(pk=i.cod_item_pedido).dcr_produto,
+                        'nome': Produto.objects.get(pk=i.cod_produto.pk).dcr_produto,
                         'quantidade': i.qtd_produto,
-                })
+                    })
+                    print(produtos)
+                print(3)
                 consulta['detalhesItens'] = produtos
+                print(4)
                 
             except Produto.DoesNotExist:
-                    print(f"Produto com pk={i.cod_item_pedido} não existe.")
+                    print(f"Produto com pk={i.cod_produto.pk} não existe.")
 
             return Response(consulta)
         
@@ -186,13 +191,13 @@ class PedidoViewSet(ModelViewSet):
             print(itens, "\n\n")
             for i in itens:
                 try:
-                    produto = Produto.objects.get(pk=i.cod_item_pedido)
+                    produto = Produto.objects.get(pk=i.cod_produto.pk)
                     produtos.append({
                         'nome': produto.dcr_produto,
                         'quantidade': i.qtd_produto,
                     })
                 except Produto.DoesNotExist:
-                    print(f"Produto com pk={i.cod_item_pedido} não existe.")
+                    print(f"Produto com pk={i.cod_produto.pk} não existe.")
             p['detalhesItens'] = produtos
             #print(produtos, "\n\n")
         return Response(consulta)
