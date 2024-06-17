@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <img src="@/assets/logo.svg" alt="Logo" class="logo">
+    <h2>IfoodSocial</h2>
     <h1>Gestão de Pedidos</h1>
     <div class="status-box">
       <button @click="toggleText" :style="{ color: textColor, backgroundColor: buttonBackgroundColor }">{{ buttonText }}</button>
@@ -39,6 +39,8 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Peralta&display=swap');
+
 .header {
   background-color: #FA6A2E;
   color: #fff;
@@ -46,17 +48,25 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.logo {
-  width: 50px;
-  height: auto;
+  background: linear-gradient(to bottom, #FA6A2E, #FA6A2E, #FA6A2E, #ececec);
 }
 
 .header h1 {
   flex-grow: 1;
   text-align: center;
   margin: 0;
+}
+
+.header h2 {
+  font-family: 'Peralta', sans-serif;
+  transform: none;
+  transition: transform 0.2s ease-out;
+  font-size: 25px;
+
+}
+
+.header h2:hover {
+  transform: translateX(2vh);
 }
 
 .status-box button {

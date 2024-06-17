@@ -2,6 +2,7 @@
   <div>
     <main>
       <div class="detalhes-container">
+        <button @click="redirectPrevault" class="backdoor"><strong>X</strong></button>
         <header class="header">
           <h1>Pedido N° {{ pedidoId }}</h1>
           <p class="data-pedido">Feito em {{ pedido.data_pedido }}</p>
@@ -97,6 +98,9 @@ export default {
           console.error(error);
         });
     },
+    redirectPrevault(){
+        this.$router.push({ name: 'Pedidos'});
+    }
   },
 };
 </script>
@@ -108,7 +112,7 @@ p {
 
 .detalhes-container {
   width: 400px;
-  height: 450px;
+  height: 470px;
   position: absolute;
   top: 52%;
   left: 50%;
@@ -122,6 +126,20 @@ p {
 
 .header {
   text-align: center;
+}
+
+.backdoor{
+    position: absolute;
+    right: 20px;
+    background-color: white;
+    color: rgb(255, 0, 0);
+    border:none;
+    font-size:22px;
+    font-weight: bolder;
+  }
+
+.backdoor:hover{
+    transform: scale(1.5);
 }
 
 .header h1 {
