@@ -1,6 +1,5 @@
 <template>
     <div>
-      <Header :title="'Gestão de Pedidos'" />
       <main>
         <div class="detalhes-container">
           <header class="header">
@@ -33,22 +32,15 @@
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   </template>
   
   <script>
-  import Header from '@/components/Header.vue';
-  import Footer from '@/components/Footer.vue';
   import { api } from '../axios-api';
   
   export default {
     name: 'DetalhesPedidoAnalise',
     props: ['id'],
-    components: {
-      Header,
-      Footer,
-    },
     data() {
       return {
         pedido: {
