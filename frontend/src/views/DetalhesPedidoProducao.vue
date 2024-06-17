@@ -6,11 +6,11 @@
             <h1>Pedido N° {{ pedidoId }}</h1>
             <p class="data-pedido">Feito em {{ pedido.data_pedido }}</p>
           </header>
+          <p class="status-pagamento">
+            <span :class="['status', statusClass]">{{ statusClass }}</span>
+          </p>
           <section class="detalhes-pagamento">
             <h2>Detalhes do pagamento</h2>
-            <p class="status-pagamento">
-              <span :class="['status', statusClass]">{{ statusClass }}</span>
-            </p>
             <p><strong>Forma de pagamento:</strong> {{ pedido.cod_forma_pagto }}</p>
             <p><strong>Subtotal:</strong> R$ {{ pedido.vlr_pedido }}</p>
           </section>
@@ -95,17 +95,23 @@
   </script>
   
   <style scoped>
-  .detalhes-container {
-    position: absolute;
-    top: 52%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.227); 
+  p {
+    margin-bottom: 5px;
   }
+
+  .detalhes-container {
+  width: 400px;
+  height: 470px;
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.227); 
+}
   
   .header {
     text-align: center;
@@ -128,7 +134,7 @@
   .detalhes-itens {
     margin-bottom: 20px;
     height:100px;
-    width: 330px;
+    width: 380px;
     position: relative;
     overflow-y: auto;
   }
@@ -143,6 +149,10 @@
     margin-bottom: 0;
   }
   
+  .status-pagamento {
+  margin-bottom: 10px;
+}
+
   .status-pagamento .status {
     padding: 5px 10px;
     border-radius: 5px;
