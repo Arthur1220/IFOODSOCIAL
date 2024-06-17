@@ -121,6 +121,9 @@ class Produto(models.Model):
     cod_categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, db_column='cod_categoria')
     cod_empreedimento = models.ForeignKey(Empreendimento, on_delete=models.CASCADE, db_column='cod_empreedimento')
 
+    def __str__(self):
+        return self.dcr_produto
+    
     class Meta:
         managed = False
         db_table = 'PRODUTO'  # Nome da tabela no banco de dados
