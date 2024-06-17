@@ -18,7 +18,7 @@
             @click="redirectToDetails(order)"
           >
             <h3>{{ order.cod_pedido }}</h3>
-            <p>R${{ order.vlr_pedido }}</p>
+            <p>R$ {{ order.vlr_pedido }}</p>
             <p>Tipo de pagamento: {{ order.cod_forma_pagto }}</p>
             <p>Data do pedido: {{ order.data_pedido }}</p>
           </div>
@@ -51,7 +51,7 @@
             @click="redirectToDetails(order)"
           >
             <h3>{{ order.cod_pedido }}</h3>
-            <p>Entrega: {{ order.cod_cliente }}</p>
+            <p>Entrega: {{ order.endereco }}</p>
             <p>Data do pedido: {{ order.data_pedido }}</p>
           </div>
         </div>
