@@ -17,14 +17,14 @@
           </section>
           <section class="detalhes-entrega">
             <h2>Detalhes da entrega</h2>
-            <p><strong>Tipo de entrega:</strong> {{ pedido.tip_pedido }}</p>
+            <p><strong>Tipo de entrega:</strong> {{ pedido.endereco }}</p>
             <p><strong>Endereço:</strong> {{ pedido.cod_cliente }}</p>
           </section>
           <h2 class="sub-itens">Itens do pedido</h2>
           <section class="detalhes-itens">
             <ul>
               <li v-for="item in pedido.detalhesItens" :key="item.id">
-                {{ item.nome }} - Quantidade: {{ item.quantidade }}
+                {{ item.nome }} - {{ item.quantidade }}x
               </li>
             </ul>
           </section>
@@ -80,7 +80,7 @@
     },
     methods: {
       fetchPedidoDetails() {
-        api.get(`/ifoodsocial/getPedidoID/${this.id}/`)  
+        api.get(`/ifoodsocial/getPedido/${this.id}/`)  
           .then(response => {
             this.pedido = response.data;
           })

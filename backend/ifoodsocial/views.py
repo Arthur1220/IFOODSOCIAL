@@ -164,17 +164,12 @@ class PedidoViewSet(ModelViewSet):
             itens = ItemPedido.objects.filter(cod_pedido=id)
             produtos = []
             try:
-                print(itens)
                 for i in itens:
-                    print(1)
                     produtos.append({
                         'nome': Produto.objects.get(pk=i.cod_produto.pk).dcr_produto,
                         'quantidade': i.qtd_produto,
                     })
-                    print(produtos)
-                print(3)
                 consulta['detalhesItens'] = produtos
-                print(4)
                 
             except Produto.DoesNotExist:
                     print(f"Produto com pk={i.cod_produto.pk} não existe.")
@@ -186,9 +181,10 @@ class PedidoViewSet(ModelViewSet):
         consulta = serializer.data
 
         for p in consulta:
+            cliente = Cliente.objects.get(pk=p['cod_cliente'])
+            p['endereco'] = f'{cliente.cod_localidade}, {cliente.cod_bairro}, {cliente.cod_cidade}, {cliente.num_cep}'
             itens = ItemPedido.objects.filter(cod_pedido=p['cod_pedido'])
             produtos = []
-            print(itens, "\n\n")
             for i in itens:
                 try:
                     produto = Produto.objects.get(pk=i.cod_produto.pk)
